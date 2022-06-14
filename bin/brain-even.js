@@ -1,19 +1,16 @@
 import readlineSync from 'readline-sync';
+import toMeet from '../src/cli.js';
+import getRandomInt from './random-number.js';
 
 const brainEven = () => {
-    const userName = readlineSync.question('May I have your name? ');
+    const userName = toMeet();
 
-    console.log(`Hello, ${userName}!`);
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
     let usersAnswer;
     const numbers = [1, 2, 3];
     let stop = 0;
     let randomNumber;
-
-    const getRandomInt = (max, min) => {
-        return parseInt(Math.random() * (max - min)) + min;
-    };
 
     for (const num of numbers) {
         randomNumber = getRandomInt(1, 100);
@@ -45,3 +42,5 @@ const brainEven = () => {
 }
 
 brainEven();
+
+export default getRandomInt;
