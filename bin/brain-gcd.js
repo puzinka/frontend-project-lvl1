@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import toMeet from '../src/cli.js';
-import getRandomInt from './random-number.js';
-import getGCD from './gcd.js'; 
+import getRandomInt from '../src/random-number.js';
+import getGCD from '../src/gcd.js'; 
 
 const brainGcd = () => {
     const userName = toMeet();

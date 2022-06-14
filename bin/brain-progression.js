@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import toMeet from '../src/cli.js';
-import getRandomInt from './random-number.js'; 
-import getProgression from './progression.js';
+import getRandomInt from '../src/random-number.js'; 
+import getProgression from '../src/progression.js';
 
 const brainProgression = () => {
     const userName = toMeet();

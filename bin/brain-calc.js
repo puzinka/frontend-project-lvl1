@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import toMeet from '../src/cli.js';
-import getRandomInt from './random-number.js';
+import getRandomInt from '../src/random-number.js';
 
 const brainCalc = () => {
     const userName = toMeet();
