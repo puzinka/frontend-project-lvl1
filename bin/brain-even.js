@@ -1,46 +1,43 @@
 import readlineSync from 'readline-sync';
 import toMeet from '../src/cli.js';
-import getRandomInt from './random-number.js';
+import getRandomInt from '../src/random-number.js';
 
 const brainEven = () => {
-    const userName = toMeet();
+  const userName = toMeet();
 
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-    let usersAnswer;
-    const numbers = [1, 2, 3];
-    let stop = 0;
-    let randomNumber;
+  let usersAnswer;
+  let stop = 0;
+  let randomNumber;
 
-    for (const num of numbers) {
-        randomNumber = getRandomInt(1, 100);
-        console.log(`Question: ${randomNumber}`);
-        usersAnswer = readlineSync.question('Your answer: ');
-        if (randomNumber % 2 === 0) {
-            if (usersAnswer !== 'yes') {
-                console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was 'yes'.`);
-                stop = 1;
-                break;
-            }
-            console.log('Correct!');
-        } else {
-            if (usersAnswer !== 'no') {
-                console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was 'no'.`);
-                stop = 1;
-                break;
-            }
-            console.log('Correct!');
-        }
+  while (stop < 3) {
+    stop += 1;
+
+    randomNumber = getRandomInt(1, 100);
+    console.log(`Question: ${randomNumber}`);
+    usersAnswer = readlineSync.question('Your answer: ');
+
+    if (randomNumber % 2 === 0) {
+      if (usersAnswer !== 'yes') {
+        console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was 'yes'.`);
+        console.log(`Let's try again, ${userName}!`);
+        break;
+      }
+      console.log('Correct!');
+    } else {
+      if (usersAnswer !== 'no') {
+        console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was 'no'.`);
+        console.log(`Let's try again, ${userName}!`);
+        break;
+      }
+      console.log('Correct!');
     }
+  }
 
-    if (stop === 0) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-    }
-
-    console.log(`Let's try again, ${userName}!`);
-}
+  if (stop === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
 
 brainEven();
-
-export default getRandomInt;

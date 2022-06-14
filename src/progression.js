@@ -1,11 +1,11 @@
 const getProgression = (firstNumber, step, count) => {
-    let mass = [];
+  const mass = [];
 
-    for (let i = firstNumber; mass.length < count; i += step) {
-        mass.push(i);
-    }
+  for (let i = firstNumber; mass.length < count; i += step) {
+    mass.push(i);
+  }
 
-    return mass;
+  return mass;
 };
 
 export default getProgression;
