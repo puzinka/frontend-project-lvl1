@@ -39,6 +39,6 @@ const brainGcd = () => {
     }
 
     console.log(`Let's try again, ${userName}!`);
-}
+};
 
 brainGcd();
