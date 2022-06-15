@@ -30,7 +30,7 @@ const brainProgression = () => {
     tainedNumber = progression[index];
     progression[index] = '..';
 
-    console.log(`Question: ${progression}`);
+    console.log(`Question: ${progression.join(' ')}`);
     usersAnswer = readlineSync.question('Your answer: ');
 
     if (tainedNumber !== Number(usersAnswer)) {
